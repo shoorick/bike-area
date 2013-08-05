@@ -88,7 +88,7 @@ graph G {
 
     subgraph failed {
 
-        // Ближние
+        // Ближние — можно пройти за час
         edge [ color=orange, fontcolor=orange, fontsize=10, penwidth=2 ]
         Кыштым -- Каолиновый [ label=2 ]
         "Михеевский кордон" -- "Северные Печи" [ label=3 ]
@@ -96,10 +96,11 @@ graph G {
         Байрамгулово -- Аргази -- Биккулова [ label=8 ]
         Вишнёвогорск -- Аракуль  [ label=10 ]
         "Северные Печи" -- Куштумга [ label=10 ]
-
-        edge [ color=orangered, fontcolor=orangered, fontsize=8, penwidth=1 ]
         Касарги -- "Новое Поле" [ label=13 ]
         "Верхний Уфалей" -- Силач [ label=15 ]
+
+        // Ближние
+        edge [ color=orangered, fontcolor=orangered, fontsize=8, penwidth=1 ]
         Пороги -- Бердяуш [ label=17 ]
         Миасс -- Кундравы  [ label=25 ]
         Аргаяш -- Касарги  [ label=23 ]
@@ -108,9 +109,9 @@ graph G {
 
         // Средние — можно пройти за день
         edge [ color=red, fontcolor=red, style="dashed" ]
-        Анапа -- Новороссийск  [ label=50 ]
+        Анапа -- Новороссийск [ label=50 ]
+        Шемаха -- "Верхний Уфалей" [ label=85 ]
         Бердяуш -- Златоуст [ label=65 ]
-        Шемаха -- "Верхний Уфалей"   [ label=85 ]
 
         // Дальние
         edge [ color=plum, fontcolor=plum, style="dotted" ]
@@ -124,3 +125,5 @@ graph G {
 
     }
 }
+
+// https://gist.github.com/shoorick/6155062
