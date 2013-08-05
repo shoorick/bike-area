@@ -1,0 +1,126 @@
+graph G {
+    node [ shape=box, fontsize=10, fontname="Droid Sans", style=filled, height=0.2 ]
+    edge [ color=gray50, penwidth=3, fontname="Droid Sans" ]
+    graph [ overlap=false ]
+
+    subgraph main {
+        node [ fillcolor=pink ]
+
+        Челябинск [ fontsize=14 ]
+        Миасс [ fontsize=12 ]
+        Челябинск -- Смолино -- Полетаево -- Биргильда -- Тактыбай -- Бишкиль -- Мисяш -- Чебаркуль
+        Миасс -- Чебаркуль
+        Непряхино -- Мисяш
+        Шахматово -- Мисяш
+        Бишкиль -- Медведево 
+        Челябинск -- Малиновка -- "Полетаево II" -- Высокий -- Тактыбай
+        "Полетаево II" -- Полетаево
+        Каолиновый -- "Б. Акуля" -- Кузнецкое -- Байрамгулово -- Биккулова -- Яраткулово -- Саитова -- "Верхние Караси" -- Непряхино -- Чебаркуль -- Кундравы
+        "Б. Акуля" -- Тайгинка -- Кузнецкое -- Аргаяш
+        Челябинск -- Кайгородово -- Полетаево
+        Есаульский -- Кременкуль -- Челябинск
+        Касарги -- "Большое Баландино" -- Баландино -- Челябинск
+        Миасс -- Тургояк -- Сыростан
+        Куштумга -- Тургояк
+        Челябинск -- "Новое Поле" -- Ужевка -- Есаульский
+        Челябинск -- Глинка -- Дубровка
+    }
+
+    subgraph north {
+        node [ fillcolor=powderblue ]
+
+        Аракуль -- Силач
+    }
+
+    subgraph argazi {
+        node [ fillcolor=cyan ]
+
+        Аргази
+    }
+
+    subgraph penza {
+        node [ fillcolor=lavender ]
+
+        Пенза
+    }
+
+    subgraph samara {
+        node [ fillcolor=cornflowerblue ]
+
+        Самара
+    }
+
+    subgraph shemakha {
+        node [ fillcolor=khaki ]
+
+        Шемаха
+    }
+
+    subgraph mount {
+        node [ fillcolor=green ]
+        Златоуст [ fontsize=12 ]
+
+        "Чёрная скала" -- Златоуст -- "Михеевский кордон"
+    }
+
+    subgraph ai {
+        node [ fillcolor=yellowgreen ]
+
+        "Сикияз-Тамак" -- Межевой -- Сулея
+    }
+
+    subgraph south1 {
+        node [ fillcolor=yellow ]
+
+        Голубицкая -- Темрюк -- Анапа
+    }
+
+    subgraph south2 {
+        node [ fillcolor=wheat ]
+
+        Новороссийск -- "Абрау-Дюрсо" -- Дюрсо
+    }
+
+    subgraph failed_cities {
+        node [ shape="circle",fillcolor="white",color="red",fontsize=7, height=0.1 ]
+        Кыштым Пороги Бердяуш "Северные Печи" Вишнёвогорск "Верхний Уфалей"
+    }
+
+    subgraph failed {
+
+        // Ближние
+        edge [ color=orange, fontcolor=orange, fontsize=10, penwidth=2 ]
+        Кыштым -- Каолиновый [ label=2 ]
+        "Михеевский кордон" -- "Северные Печи" [ label=3 ]
+        "Северные Печи" -- Миасс [ label=8 ]
+        Байрамгулово -- Аргази -- Биккулова [ label=8 ]
+        Вишнёвогорск -- Аракуль  [ label=10 ]
+        "Северные Печи" -- Куштумга [ label=10 ]
+
+        edge [ color=orangered, fontcolor=orangered, fontsize=8, penwidth=1 ]
+        Касарги -- "Новое Поле" [ label=13 ]
+        "Верхний Уфалей" -- Силач [ label=15 ]
+        Пороги -- Бердяуш [ label=17 ]
+        Миасс -- Кундравы  [ label=25 ]
+        Аргаяш -- Касарги  [ label=23 ]
+        Пороги -- Сулея  [ label=29 ]
+        Силач -- Кыштым  [ label=35 ]
+
+        // Средние
+        edge [ color=red, fontcolor=red, style="dashed" ]
+        Анапа -- Новороссийск  [ label=50 ]
+        Бердяуш -- Златоуст [ label=65 ]
+
+        // Дальние
+        edge [ color=plum, fontcolor=plum, style="dotted" ]
+        Шемаха -- "Верхний Уфалей"   [ label=85 ]
+        Темрюк -- Новороссийск [ label=123 ]
+        
+        // Совсем дальние — нереально проехать
+        edge [ color=skyblue, fontcolor=skyblue ]
+        Сулея -- Самара [ label=700 ]
+        Самара -- Пенза [ label=400 ]
+        Пенза -- Новороссийск [ label=1500 ]
+
+    }
+}
