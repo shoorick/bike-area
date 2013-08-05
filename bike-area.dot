@@ -106,20 +106,20 @@ graph G {
         Пороги -- Сулея  [ label=29 ]
         Силач -- Кыштым  [ label=35 ]
 
-        // Средние
+        // Средние — можно пройти за день
         edge [ color=red, fontcolor=red, style="dashed" ]
         Анапа -- Новороссийск  [ label=50 ]
         Бердяуш -- Златоуст [ label=65 ]
+        Шемаха -- "Верхний Уфалей"   [ label=85 ]
 
         // Дальние
         edge [ color=plum, fontcolor=plum, style="dotted" ]
-        Шемаха -- "Верхний Уфалей"   [ label=85 ]
         Темрюк -- Новороссийск [ label=123 ]
         
         // Совсем дальние — нереально проехать
         edge [ color=skyblue, fontcolor=skyblue ]
-        Сулея -- Самара [ label=700 ]
         Самара -- Пенза [ label=400 ]
+        Сулея -- Самара [ label=700 ]
         Пенза -- Новороссийск [ label=1500 ]
 
     }
