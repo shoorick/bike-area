@@ -83,6 +83,12 @@ graph G {
         Новороссийск -- "Абрау-Дюрсо" -- Дюрсо
     }
 
+    subgraph tyelga {
+        node [ fillcolor=aquamarine ]
+
+        Тыелга
+    }
+
     subgraph failed_cities {
         node [ shape="circle",fillcolor="white",color="red",fontsize=7, height=0.1 ]
         Кыштым Касли Пороги Бердяуш Вишнёвогорск Нязепетровск "Верхний Уфалей"
@@ -107,6 +113,9 @@ graph G {
         Пороги -- Сулея  [ label=29 ]
         Кыштым -- Касли  [ label=25 ]
         Касли -- Вишнёвогорск [ label=20]
+        Тыелга -- "Михеевский кордон" [ label=14 ]
+        Тыелга -- "Северные Печи" [ label=17 ]
+        Тыелга -- Халитова [ label=24 ]
 
         // Средние — можно пройти за день
         edge [ color=red, fontcolor=red, style="dashed" ]
