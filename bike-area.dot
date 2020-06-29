@@ -57,7 +57,7 @@ graph G {
     }
 
     subgraph mount {
-        node [ fillcolor=green ]
+        node [ fillcolor=chartreuse ]
         Златоуст [ fontsize=12 ]
 
         //"Чёрная скала" [ shape=hexagon, height=0.2 ]
