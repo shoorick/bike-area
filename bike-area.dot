@@ -92,10 +92,18 @@ graph G {
         Тыелга
     }
 
+    subgraph zhuchki {
+        node [ fillcolor=tan ]
+
+        Жучки -- Абрамцево
+        Жучки -- Быково -- Хотьково -- Абрамцево
+    }
+
     subgraph failed_cities {
         node [ shape="circle",fillcolor="white",color="red",fontsize=7, height=0.1 ]
         Кыштым Касли Пороги Бердяуш Вишневогорск
         Арасланово Нязепетровск "Верхний Уфалей"
+        Москва
     }
 
     subgraph failed {
@@ -129,6 +137,7 @@ graph G {
         Златоуст -- Бердяуш [ label=60 ]
         Нязепетровск -- Арасланово [ label=32 ]
         "Верхний Уфалей" -- Нязепетровск [ label=45 ]
+        Абрамцево -- Москва [ label=55 ]
         Темрюк -- Новороссийск [ label=85 ]
 
         // Дальние
@@ -137,6 +146,7 @@ graph G {
         // Совсем дальние — нереально проехать
         edge [ color=skyblue, fontcolor=skyblue ]
         Самара -- Пенза [ label=372 ]
+        Москва -- Пенза [ label=710 ]
         Сулея -- Самара [ label=695 ]
         Пенза -- Темрюк [ label=1250 ]
     }
