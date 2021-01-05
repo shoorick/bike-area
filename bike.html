@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Bike</title>
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
- <!--[if lte IE 8]>
-     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
- <![endif]-->
-        <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
-    <script src="osm/leaflet-plugins/layer/vector/GPX.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""></script>
+
+    <!--script src="osm/leaflet-plugins/layer/vector/GPX.js"></script>
     <script src="osm/leaflet-plugins/control/Scale.js"></script>
-    <script src="osm/leaflet-plugins/control/Distance.js"></script>
-        <style>
-            body { margin: 0; padding: 0 }
-            #map { position: absolute; top: 0; bottom: 0; width: 100% }
-        </style>
-</head>
-<body>
+    <script src="osm/leaflet-plugins/control/Distance.js"></script-->
+    <style>
+      body { margin: 0; padding: 0 }
+      #map { position: absolute; top: 0; bottom: 0; width: 100% }
+    </style>
+  </head>
+  <body>
     <!-- define a DIV into which the map will appear. Make it take up the whole window -->
     <div id="map"></div>
-<script type='text/javascript'>
-var mapnik   = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="http://osm.org">OpenStreetMap</a> contributors'});
-var cyclemap = new L.TileLayer('http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png', {maxZoom: 18, attribution: 'Map data &copy; <a href="http://osm.org">OpenStreetMap</a> contributors'});
-var kosmomap = new L.TileLayer('http://{s}.tile.kosmosnimki.ru/kosmo/{z}/{x}/{y}.png', {
+    <script type='text/javascript'>
+      var mapnik   = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="http://osm.org">OpenStreetMap</a> contributors'});
+      var cyclemap = new L.TileLayer('http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png', {maxZoom: 18, attribution: 'Map data &copy; <a href="http://osm.org">OpenStreetMap</a> contributors'});
+      var kosmomap = new L.TileLayer('http://{s}.tile.kosmosnimki.ru/kosmo/{z}/{x}/{y}.png', {
         maxZoom: 18,
         attribution: 'Map data &copy <a href="http://osm.org">OpenStreetMap</a> contributors, CC-BY-SA; rendering by <a href="http://kosmosnimki.ru">kosmosnimki.ru</a>'});
 
-var mapquest = new L.TileLayer(
-    'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'Data, imagery and map information provided by <a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
-        subdomains: ['otile1','otile2','otile3','otile4']
-    });
+      var mapquest = new L.TileLayer(
+        'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: 'Data, imagery and map information provided by <a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
+            subdomains: ['otile1','otile2','otile3','otile4']
+        });
 
-var track    = new L.GPX('bike.gpx', {async: true, color: 'red'})
-            .on('loaded', function(e) { map.fitBounds(e.target.getBounds()); });
+      //var track = new L.GPX('bike.gpx', {async: true, color: 'red'})
+      //  .on('loaded', function(e) { map.fitBounds(e.target.getBounds()); });
 
-var map      = new L.Map('map', { layers: [mapnik, track], center: [45, 45], zoom: 11 } );
+      var map = new L.Map('map', { layers: [mapnik/*, track*/], center: [45, 45], zoom: 11 } );
 
 // Plans
 var plan_options = { dashArray: '5, 9', weight: '3' };
@@ -50,10 +52,10 @@ var plan_kushtumga = new L.Polyline(
         plan_options
 ).addTo(map).bindPopup('4');
 
-L.control.layers({'Mapnik': mapnik, /*'Kosmosnimki': kosmomap,*/ 'CycleMap': cyclemap, 'MapQuest': mapquest }, {'Tracks': track}).addTo(map);
-map.addControl(new L.Control.Scale());
-map.addControl(new L.Control.Distance());
+L.control.layers({'Mapnik': mapnik, /*'Kosmosnimki': kosmomap,*/ 'CycleMap': cyclemap, 'MapQuest': mapquest }/*, {'Tracks': track}*/).addTo(map);
+//map.addControl(new L.Control.Scale());
+//map.addControl(new L.Control.Distance());
 
-</script>
-</body>
+    </script>
+  </body>
 </html>
