@@ -10,7 +10,6 @@
       crossorigin=""></script>
 
     <!--script src="osm/leaflet-plugins/layer/vector/GPX.js"></script>
-    <script src="osm/leaflet-plugins/control/Scale.js"></script>
     <script src="osm/leaflet-plugins/control/Distance.js"></script-->
     <style>
       body { margin: 0; padding: 0 }
@@ -38,6 +37,7 @@
       //  .on('loaded', function(e) { map.fitBounds(e.target.getBounds()); });
 
       var map = new L.Map('map', { layers: [mapnik/*, track*/], center: [55, 60], zoom: 8 } );
+      L.control.scale().addTo(map);
 
 // Plans
 var plan_options = { dashArray: '5, 9', weight: '3' };
@@ -53,7 +53,6 @@ var plan_kushtumga = new L.Polyline(
 ).addTo(map).bindPopup('4');
 
 L.control.layers({'Mapnik': mapnik, /*'Kosmosnimki': kosmomap,*/ 'CycleMap': cyclemap, 'MapQuest': mapquest }/*, {'Tracks': track}*/).addTo(map);
-//map.addControl(new L.Control.Scale());
 //map.addControl(new L.Control.Distance());
 
     </script>
