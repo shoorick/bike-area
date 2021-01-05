@@ -40,21 +40,21 @@
       var map = new L.Map('map', { layers: [mapnik, track], center: [55, 60], zoom: 8 } );
       L.control.scale().addTo(map);
 
-// Plans
-var plan_options = { dashArray: '5, 9', weight: '3' };
+      // Plans
+      var plan_options = { dashArray: '5, 9', weight: '3' };
 
-/*var plan_smolino_glinka = new L.Polyline(
-        [[55.03407, 61.27341], [54.94898, 61.32555]],
-        plan_options
-).addTo(map).bindPopup('10');*/
+      /*var plan_smolino_glinka = new L.Polyline(
+              [[55.03407, 61.27341], [54.94898, 61.32555]],
+              plan_options
+      ).addTo(map).bindPopup('10');*/
 
-var plan_kushtumga = new L.Polyline(
-        [[55.22832, 59.9907], [55.19405, 59.97403]],
-        plan_options
-).addTo(map).bindPopup('4');
+      var plan_kushtumga = new L.Polyline(
+              [[55.22832, 59.9907], [55.19405, 59.97403]],
+              plan_options
+      ).addTo(map).bindPopup('4');
 
-L.control.layers({'Mapnik': mapnik, /*'Kosmosnimki': kosmomap,*/ 'CycleMap': cyclemap, 'MapQuest': mapquest }/*, {'Tracks': track}*/).addTo(map);
-//map.addControl(new L.Control.Distance());
+      L.control.layers({'Mapnik': mapnik, /*'Kosmosnimki': kosmomap,*/ 'CycleMap': cyclemap, 'MapQuest': mapquest }/*, {'Tracks': track}*/).addTo(map);
+      //map.addControl(new L.Control.Distance());
 
     </script>
   </body>
