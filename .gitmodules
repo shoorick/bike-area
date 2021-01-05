@@ -1,3 +1,6 @@
 [submodule "osm/leaflet-plugins"]
 	path = osm/leaflet-plugins
 	url = https://github.com/shramov/leaflet-plugins
+[submodule "osm/leaflet-ajax"]
+	path = osm/leaflet-ajax
+	url = https://github.com/calvinmetcalf/leaflet-ajax
