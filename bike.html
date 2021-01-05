@@ -9,8 +9,8 @@
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
       crossorigin=""></script>
 
-    <!--script src="osm/leaflet-plugins/layer/vector/GPX.js"></script>
-    <script src="osm/leaflet-plugins/control/Distance.js"></script-->
+    <script src="osm/leaflet-ajax/dist/leaflet.ajax.min.js"></script>
+    <!--script src="osm/leaflet-plugins/control/Distance.js"></script-->
     <style>
       body { margin: 0; padding: 0 }
       #map { position: absolute; top: 0; bottom: 0; width: 100% }
@@ -35,8 +35,9 @@
 
       //var track = new L.GPX('bike.gpx', {async: true, color: 'red'})
       //  .on('loaded', function(e) { map.fitBounds(e.target.getBounds()); });
+      var track = new L.GeoJSON.AJAX('bike.geojson');
 
-      var map = new L.Map('map', { layers: [mapnik/*, track*/], center: [55, 60], zoom: 8 } );
+      var map = new L.Map('map', { layers: [mapnik, track], center: [55, 60], zoom: 8 } );
       L.control.scale().addTo(map);
 
 // Plans
