@@ -33,9 +33,8 @@
             subdomains: ['otile1','otile2','otile3','otile4']
         });
 
-      //var track = new L.GPX('bike.gpx', {async: true, color: 'red'})
-      //  .on('loaded', function(e) { map.fitBounds(e.target.getBounds()); });
       var track = new L.GeoJSON.AJAX('bike.geojson');
+      track.options['style'] = {color: 'red', opacity: .5};
 
       var map = new L.Map('map', { layers: [mapnik, track], center: [55, 60], zoom: 8 } );
       L.control.scale().addTo(map);
