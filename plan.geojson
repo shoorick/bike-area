@@ -1,0 +1,18 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "popupText": 4
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [55.22832, 59.9907],
+          [55.19405, 59.97403]
+        ]
+      }
+    }
+  ]
+}

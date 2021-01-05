@@ -47,12 +47,14 @@
               plan_options
       ).addTo(map).bindPopup('10');*/
 
-      var plan_kushtumga = new L.Polyline(
-              [[55.22832, 59.9907], [55.19405, 59.97403]],
-              plan_options
-      ).addTo(map).bindPopup('4');
+      var plan = new L.GeoJSON.AJAX('plan.geojson');
+      plan.options['style'] = {dashArray: '5, 9', weight: 3, opacity: .5};
+      plan.addTo(map); //.bindPopup('4');
 
-      L.control.layers({'Mapnik': mapnik, /*'Kosmosnimki': kosmomap,*/ 'CycleMap': cyclemap, 'MapQuest': mapquest }/*, {'Tracks': track}*/).addTo(map);
+      L.control.layers(
+        {'Mapnik': mapnik, /*'Kosmosnimki': kosmomap,*/ 'CycleMap': cyclemap, 'MapQuest': mapquest },
+        {'Tracks': track, 'Plans': plan}
+      ).addTo(map);
       //map.addControl(new L.Control.Distance());
 
     </script>
