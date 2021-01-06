@@ -20,25 +20,55 @@
     <!-- define a DIV into which the map will appear. Make it take up the whole window -->
     <div id="map"></div>
     <script type='text/javascript'>
-      var mapnik   = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="http://osm.org">OpenStreetMap</a> contributors'});
-      var cyclemap = new L.TileLayer('http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png', {maxZoom: 18, attribution: 'Map data &copy; <a href="http://osm.org">OpenStreetMap</a> contributors'});
+      var mapnik   = new L.TileLayer(
+        'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+          attribution: 'Map data &copy; <a href="http://osm.org">OpenStreetMap</a> contributors'
+        }
+      );
+      var cyclemap = new L.TileLayer(
+        'https://tile.susu.ru/osm/cycle/{z}/{x}/{y}.png',
+        {
+          maxZoom: 17,
+          attribution: 'Map data &copy; <a href="http://osm.org">OpenStreetMap</a> contributors'
+        }
+      );
+      var intl = new L.TileLayer(
+        'https://tile.susu.ru/osm-intl/{z}/{x}/{y}.png',
+        {
+          maxZoom: 17,
+          attribution: 'Map data &copy; <a href="http://osm.org">OpenStreetMap</a> contributors'
+        }
+      );
 
       var track = new L.GeoJSON.AJAX('bike.geojson');
       track.options['style'] = {color: 'red', opacity: .5};
 
-      var map = new L.Map('map', { layers: [mapnik, track], center: [55, 60], zoom: 8 } );
+      var map = new L.Map(
+        'map',
+        {
+          layers: [mapnik, track],
+          center: [55, 60],
+          zoom: 8,
+          maxBounds: [[40, 30], [60, 65]]
+        }
+      );
       L.control.scale().addTo(map);
-
-      // Plans
-      var plan_options = { dashArray: '5, 9', weight: '3' };
 
       var plan = new L.GeoJSON.AJAX('plan.geojson');
       plan.options['style'] = {dashArray: '5, 9', weight: 3, opacity: .5};
       plan.addTo(map); //.bindPopup('4');
 
       L.control.layers(
-        {'Standard': mapnik, 'CycleMap': cyclemap },
-        {'Tracks': track, 'Plans': plan}
+        {
+          'Standard': mapnik,
+          'CycleMap': cyclemap,
+          'Light': intl
+        },
+        {
+          'Tracks': track,
+          'Plans': plan
+        }
       ).addTo(map);
       //map.addControl(new L.Control.Distance());
 
