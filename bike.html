@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Bike</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin=""/>
@@ -20,6 +21,7 @@
     <!-- define a DIV into which the map will appear. Make it take up the whole window -->
     <div id="map"></div>
     <script type='text/javascript'>
+
       var mapnik   = new L.TileLayer(
         'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         {
@@ -55,22 +57,37 @@
       );
       L.control.scale().addTo(map);
 
-      var plan = new L.GeoJSON.AJAX('plan.geojson');
-      plan.options['style'] = {dashArray: '5, 9', weight: 3, opacity: .5};
+      //var plan = new L.GeoJSON.AJAX('plan.geojson');
+      //plan.options['style'] = {dashArray: '5, 9', weight: 3, opacity: .5};
       //plan.addTo(map); //.bindPopup('4');
 
-      L.control.layers(
-        {
-          'Standard': mapnik,
-          'CycleMap': cyclemap,
-          'Light': intl
-        },
-        {
-          'Tracks': track,
-          'Plans': plan
+      function onEachFeature(feature, layer) {
+        // does this feature have a property named popupText?
+        if (feature.properties && feature.properties.popupText) {
+            layer.bindPopup(feature.properties.popupText);
         }
-      ).addTo(map);
-      //map.addControl(new L.Control.Distance());
+      }
+
+      var plan;
+      $.getJSON('plan.geojson', function(data) {
+          plan = L.geoJson(data, {
+              style: {dashArray: '5, 9', weight: 3, opacity: .5},
+              onEachFeature: onEachFeature
+          });
+
+          L.control.layers(
+            {
+              'Standard': mapnik,
+              'CycleMap': cyclemap,
+              'Light': intl
+            },
+            {
+              'Tracks': track,
+              'Plans': plan
+            }
+          ).addTo(map);
+          //map.addControl(new L.Control.Distance());
+      });
 
     </script>
   </body>
