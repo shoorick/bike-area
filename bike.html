@@ -85,7 +85,7 @@
       function onEachFeature(feature, layer) {
         // does this feature have a property named popupText?
         if (feature.properties && feature.properties.popupText) {
-            layer.bindPopup(feature.properties.popupText);
+            layer.bindPopup('' + feature.properties.popupText);
         }
       }
 
