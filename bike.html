@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Bike</title>
+    <meta charset="utf-8">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -10,7 +11,7 @@
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
       crossorigin=""></script>
 
-    <script src="osm/leaflet-ajax/dist/leaflet.ajax.min.js"></script>
+    <!--script src="osm/leaflet-ajax/dist/leaflet.ajax.min.js"></script-->
     <!--script src="osm/leaflet-plugins/control/Distance.js"></script-->
     <style>
       body { margin: 0; padding: 0 }
@@ -20,6 +21,7 @@
   <body>
     <!-- define a DIV into which the map will appear. Make it take up the whole window -->
     <div id="map"></div>
+    <script src="var-bike.js"></script>
     <script type='text/javascript'>
 
       var mapnik   = new L.TileLayer(
@@ -43,19 +45,23 @@
         }
       );
 
-      var track = new L.GeoJSON.AJAX('bike.geojson');
-      track.options['style'] = {color: 'red', opacity: .5};
+      //var track = new L.GeoJSON.AJAX('bike.geojson');
+      //track.options['style'] = {color: 'red', opacity: .5};
 
       var map = new L.Map(
         'map',
         {
-          layers: [mapnik, track],
+          layers: [mapnik], // , track
           center: [55, 60],
           zoom: 8,
           maxBounds: [[40, 30], [60, 65]]
         }
       );
-      L.control.scale().addTo(map);
+
+      L.geoJSON(track, {
+        style: {color: 'red', opacity: .5},
+        onEachFeature: onEachFeature
+      }).addTo(map);
 
       //var plan = new L.GeoJSON.AJAX('plan.geojson');
       //plan.options['style'] = {dashArray: '5, 9', weight: 3, opacity: .5};
@@ -68,27 +74,34 @@
         }
       }
 
-      var plan;
-      $.getJSON('plan.geojson', function(data) {
-          plan = L.geoJson(data, {
-              style: {dashArray: '5, 9', weight: 3, opacity: .5},
-              onEachFeature: onEachFeature
-          });
+      //var plan;
+      //$.getJSON('plan.geojson', function(data) {
+          //plan = L.geoJson(data, {
+              //style: {dashArray: '5, 9', weight: 3, opacity: .5},
+              //onEachFeature: onEachFeature
+          //});
+      //});
 
-          L.control.layers(
-            {
-              'Standard': mapnik,
-              'CycleMap': cyclemap,
-              'Light': intl
-            },
-            {
-              'Tracks': track,
-              'Plans': plan
-            }
-          ).addTo(map);
-          //map.addControl(new L.Control.Distance());
-      });
+      L.control.layers(
+        {
+          'Standard': mapnik,
+          'CycleMap': cyclemap,
+          'Light': intl
+        },
+        {
+          'Tracks': track,
+          //'Plans': plan
+        }
+      ).addTo(map);
 
+      //track._layers.forEach(function(layer){
+        //if (layer.feature && layer.feature.properties && layer.feature.properties.popupText) {
+          //layer.bindPopup(feature.properties.popupText);
+        //}
+      //});
+
+      //map.addControl(new L.Control.Distance());
+      L.control.scale().addTo(map);
     </script>
   </body>
 </html>

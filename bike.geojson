@@ -181,7 +181,12 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "stroke": "#006600",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "popupText": "Златоуст — Михеевский кордон"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1965,7 +1970,12 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "stroke": "#006600",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "popupText": "Златоуст — Чёрная скала"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2142,8 +2152,8 @@
             55.27613930023616
           ],
           [
-            59.70229094056559,
-            55.27725223233457
+            59.70182061195373,
+            55.27712460944789
           ]
         ]
       }
@@ -8978,7 +8988,12 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "popupText": "Грушинский фестиваль"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -12957,12 +12972,12 @@
         "type": "LineString",
         "coordinates": [
           [
-            59.70229094056559,
-            55.27725223233457
+            59.70182061195373,
+            55.27712002602674
           ],
           [
-            59.70415793942698,
-            55.27895866763534
+            59.7036874294281,
+            55.27901751715186
           ],
           [
             59.70632886833558,
@@ -12973,12 +12988,12 @@
             55.27853824835519
           ],
           [
-            59.70528682245945,
-            55.27848878697073
+            59.705071449279785,
+            55.27863252628529
           ],
           [
-            59.70229094056559,
-            55.27725223233457
+            59.70182329416274,
+            55.27712460944789
           ]
         ]
       }
@@ -13907,7 +13922,12 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "stroke": "#006600",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "popupText": "Златоуст — приют «Таганай»"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -16459,7 +16479,12 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "popupText": "Сулея — Сикияз-Тамакский пещерный комплекс"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
