@@ -58,7 +58,7 @@
         }
       );
 
-      L.geoJSON(track, {
+      trackLayer = L.geoJSON(track, {
         style: style,
         onEachFeature: onEachFeature
       }).addTo(map);
@@ -104,7 +104,7 @@
           'Light': intl
         },
         {
-          'Tracks': track,
+          'Tracks': trackLayer,
           //'Plans': plan
         }
       ).addTo(map);
