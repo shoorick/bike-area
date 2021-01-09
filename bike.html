@@ -89,25 +89,26 @@
         }
       }
 
-      //var plan;
-      //$.getJSON('plan.geojson', function(data) {
-          //plan = L.geoJson(data, {
-              //style: {dashArray: '5, 9', weight: 3, opacity: .5},
-              //onEachFeature: onEachFeature
-          //});
-      //});
+      var plan;
+      $.getJSON('plan.geojson', function(data) {
+          plan = L.geoJson(data, {
+              style: {dashArray: '5, 9', weight: 3, opacity: .5},
+              onEachFeature: onEachFeature
+          });
 
-      L.control.layers(
-        {
-          'Standard': mapnik,
-          'CycleMap': cyclemap,
-          'Light': intl
-        },
-        {
-          'Tracks': trackLayer,
-          //'Plans': plan
-        }
-      ).addTo(map);
+          L.control.layers(
+            {
+              'Standard': mapnik,
+              'CycleMap': cyclemap,
+              'Light': intl
+            },
+            {
+              'Tracks': trackLayer,
+              'Plans': plan
+            }
+          ).addTo(map);
+      });
+
 
       //track._layers.forEach(function(layer){
         //if (layer.feature && layer.feature.properties && layer.feature.properties.popupText) {

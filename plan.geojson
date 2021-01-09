@@ -4,7 +4,7 @@
     {
       "type": "Feature",
       "properties": {
-        "popupText": 4
+        "popupText": "4"
       },
       "geometry": {
         "type": "LineString",
@@ -27,7 +27,7 @@
     {
       "type": "Feature",
       "properties": {
-        "popupText": 3
+        "popupText": "3 км"
       },
       "geometry": {
         "type": "LineString",
