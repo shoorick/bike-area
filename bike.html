@@ -59,26 +59,28 @@
       );
 
       L.geoJSON(track, {
-        style: function(feature){
-          color = 'red';
-          opacity = .5;
-
-          if (feature.properties) {
-            if (feature.properties.stroke)
-              color = feature.properties.stroke;
-
-            if (feature.properties.opacity)
-              opacity = feature.properties.opacity;
-          }
-
-          return {color: color, opacity: opacity};
-        },
+        style: style,
         onEachFeature: onEachFeature
       }).addTo(map);
 
       //var plan = new L.GeoJSON.AJAX('plan.geojson');
       //plan.options['style'] = {dashArray: '5, 9', weight: 3, opacity: .5};
       //plan.addTo(map); //.bindPopup('4');
+
+      function style(feature){
+        color = 'red';
+        opacity = .5;
+
+        if (feature.properties) {
+          if (feature.properties.stroke)
+            color = feature.properties.stroke;
+
+          if (feature.properties.opacity)
+            opacity = feature.properties.opacity;
+        }
+
+        return {color: color, opacity: opacity};
+      }
 
       function onEachFeature(feature, layer) {
         // does this feature have a property named popupText?
