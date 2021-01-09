@@ -59,7 +59,20 @@
       );
 
       L.geoJSON(track, {
-        style: {color: 'red', opacity: .5},
+        style: function(feature){
+          color = 'red';
+          opacity = .5;
+
+          if (feature.properties) {
+            if (feature.properties.stroke)
+              color = feature.properties.stroke;
+
+            if (feature.properties.opacity)
+              opacity = feature.properties.opacity;
+          }
+
+          return {color: color, opacity: opacity};
+        },
         onEachFeature: onEachFeature
       }).addTo(map);
 
