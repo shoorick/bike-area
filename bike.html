@@ -21,7 +21,7 @@
   <body>
     <!-- define a DIV into which the map will appear. Make it take up the whole window -->
     <div id="map"></div>
-    <script src="var-bike.js"></script>
+    <!--script src="var-bike.js"></script-->
     <script type='text/javascript'>
 
       var mapnik   = new L.TileLayer(
@@ -45,8 +45,40 @@
         }
       );
 
-      //var track = new L.GeoJSON.AJAX('bike.geojson');
-      //track.options['style'] = {color: 'red', opacity: .5};
+      // Load bike tracks
+      var track;
+      var plan;
+      var layerControl;
+      
+      $.getJSON('bike.geojson', function(data) {
+          track = L.geoJson(data, {
+              style: style,
+              onEachFeature: onEachFeature
+          }).addTo(map);
+          loadPlan();
+      });
+
+      function loadPlan() {
+        $.getJSON('plan.geojson', function(data) {
+            plan = L.geoJson(data, {
+                style: {dashArray: '5, 9', weight: 3, opacity: .5},
+                onEachFeature: onEachFeature
+            });
+
+            // Create layer control after both layers are loaded
+            layerControl = L.control.layers(
+              {
+                'Standard': mapnik,
+                'CycleMap': cyclemap,
+                'Light': intl
+              },
+              {
+                'Tracks': track,
+                'Plans': plan
+              }
+            ).addTo(map);
+        });
+      }
 
       var map = new L.Map(
         'map',
@@ -89,34 +121,6 @@
         }
       }
 
-      var plan;
-      $.getJSON('plan.geojson', function(data) {
-          plan = L.geoJson(data, {
-              style: {dashArray: '5, 9', weight: 3, opacity: .5},
-              onEachFeature: onEachFeature
-          });
-
-          L.control.layers(
-            {
-              'Standard': mapnik,
-              'CycleMap': cyclemap,
-              'Light': intl
-            },
-            {
-              'Tracks': trackLayer,
-              'Plans': plan
-            }
-          ).addTo(map);
-      });
-
-
-      //track._layers.forEach(function(layer){
-        //if (layer.feature && layer.feature.properties && layer.feature.properties.popupText) {
-          //layer.bindPopup(feature.properties.popupText);
-        //}
-      //});
-
-      //map.addControl(new L.Control.Distance());
       L.control.scale().addTo(map);
     </script>
   </body>
