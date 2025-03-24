@@ -54,22 +54,14 @@
           layers: [mapnik], // , track
           center: [55, 60],
           zoom: 8,
-          maxBounds: [[40, 30], [60, 65]]
+          maxBounds: [[30, 10], [60, 70]]
         }
       );
 
-      trackLayer = L.geoJSON(track, {
-        style: style,
-        onEachFeature: onEachFeature
-      }).addTo(map);
-
-      //var plan = new L.GeoJSON.AJAX('plan.geojson');
-      //plan.options['style'] = {dashArray: '5, 9', weight: 3, opacity: .5};
-      //plan.addTo(map); //.bindPopup('4');
-
       function style(feature){
         color = 'red';
-        opacity = .5;
+        opacity = .67;
+        weight = 4;  // default line width
 
         if (feature.properties) {
           if (feature.properties.stroke)
@@ -77,9 +69,17 @@
 
           if (feature.properties.opacity)
             opacity = feature.properties.opacity;
+            
+          if (feature.properties['stroke-width'])
+            weight = feature.properties['stroke-width'];
         }
 
-        return {color: color, opacity: opacity};
+        return {
+          color: color, 
+          opacity: opacity,
+          fillOpacity: 0,
+          weight: weight
+        };
       }
 
       function onEachFeature(feature, layer) {
