@@ -108,6 +108,13 @@ graph G {
         Жучки -- Абрамцево
         Жучки -- Быково -- Хотьково -- Абрамцево
     }
+    subgraph turkey {
+        node [ fillcolor=hotpink ]
+
+        Конаклы -- Аланья -- Газипаша
+        Эликесик -- Аланья -- Секи
+        Аланья -- Кузъяка
+    }
 
     subgraph failed_cities {
         node [ shape="circle",fillcolor="white",color="red",fontsize=7, height=0.1 ]
@@ -167,5 +174,6 @@ graph G {
         Сулея -- Самара [ label=695 ]
         Пенза -- Темрюк [ label=1250 ]
         Тбилиси -- Новороссийск [ label=990 ]
+        Сарпи -- Конаклы [ label=1355 ]
     }
 }
