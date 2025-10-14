@@ -108,6 +108,13 @@ graph G {
         Жучки -- Абрамцево
         Жучки -- Быково -- Хотьково -- Абрамцево
     }
+
+    subgraph serbia {
+        node [ fillcolor=aliceblue ]
+
+        Яково -- Белград -- "Себеш-Овчински"
+    }
+
     subgraph turkey {
         node [ fillcolor=hotpink ]
 
@@ -175,5 +182,6 @@ graph G {
         Пенза -- Темрюк [ label=1250 ]
         Тбилиси -- Новороссийск [ label=990 ]
         Сарпи -- Конаклы [ label=1355 ]
+        Белград -- Конаклы [ label=1740 ]
     }
 }
