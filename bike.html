@@ -44,12 +44,20 @@
           attribution: 'Map data &copy; <a href="http://osm.org">OpenStreetMap</a> contributors'
         }
       );
+      var otm = new L.TileLayer(
+//        'https://{a|b|c}.tile.opentopomap.org/{z}/{x}/{y}.png',
+        'https://b.tile.opentopomap.org/{z}/{x}/{y}.png',
+        {
+          maxZoom: 17,
+          attribution: 'Kartendaten: © <a href="https://openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende, SRTM | Kartendarstellung: © <a href="http://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+        }
+      );
 
       // Load bike tracks
       var track;
       var plan;
       var layerControl;
-      
+
       $.getJSON('bike.geojson', function(data) {
           track = L.geoJson(data, {
               style: style,
@@ -69,6 +77,7 @@
             layerControl = L.control.layers(
               {
                 'Standard': mapnik,
+                'OpenTopoMap': otm,
                 'CycleMap': cyclemap,
                 'Light': intl
               },
