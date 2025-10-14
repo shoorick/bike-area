@@ -164,7 +164,7 @@ graph G {
         Темрюк -- Новороссийск [ label=85 ]
 
         // Дальние (от 100 км)
-        edge [ color=plum, fontcolor=plum, style="dotted" ]
+        //edge [ color=plum, fontcolor=plum, style="dotted" ]
 
         // Самые дальние — нереально проехать
         edge [ color=skyblue, fontcolor=skyblue ]
