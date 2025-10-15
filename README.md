@@ -10,5 +10,14 @@ Map
 Serve map somewhere or use standalone HTTP server:
 
 ```bash
-python -m SimpleHTTPServer
+make server
 ```
+or
+```bash
+python3 -m http.server
+```
+or
+```bash
+php -S localhost:8000
+```
+Then go to http://localhost:8000/bike.html
