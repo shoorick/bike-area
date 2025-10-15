@@ -16,3 +16,6 @@ clean:
 server:
 	echo Go to http://localhost:8000/bike.html
 	python3 -m http.server || php -S localhost:8000
+
+serbia.dot: serbia.dot.m4 serbia.inc.dot
+	m4 serbia.dot.m4 > serbia.dot
