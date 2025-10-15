@@ -109,11 +109,7 @@ graph G {
         Жучки -- Быково -- Хотьково -- Абрамцево
     }
 
-    subgraph serbia {
-        node [ fillcolor=aliceblue ]
-
-        Яково -- Белград -- "Себеш-Овчински"
-    }
+    include(`serbia.inc.dot')
 
     subgraph turkey {
         node [ fillcolor=hotpink ]
@@ -165,7 +161,7 @@ graph G {
         Силач -- Кыштым  [ label=40 ]
         Анапа -- Новороссийск [ label=50 ]
         Златоуст -- Бердяуш [ label=60 ]
-        Нязепетровск -- Арасланово [ label=32 ]
+        Нязепетровск -- Арасланово [ label=32 ]
         "Верхний\nУфалей" -- Нязепетровск [ label=45 ]
         Абрамцево -- Москва [ label=55 ]
         Темрюк -- Новороссийск [ label=85 ]
