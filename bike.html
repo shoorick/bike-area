@@ -10,6 +10,9 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
       crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.min.js"
+      crossorigin=""></script>
+
 
     <!--script src="osm/leaflet-ajax/dist/leaflet.ajax.min.js"></script-->
     <!--script src="osm/leaflet-plugins/control/Distance.js"></script-->
@@ -100,6 +103,8 @@
         }
       );
 
+      var hash = new L.Hash(map);
+
       function style(feature){
         color = 'red';
         opacity = .67;
@@ -111,7 +116,7 @@
 
           if (feature.properties.opacity)
             opacity = feature.properties.opacity;
-            
+
           if (feature.properties['stroke-width'])
             weight = feature.properties['stroke-width'];
         }
