@@ -5,8 +5,8 @@ graph G {
 
     subgraph belgrade {
     node [ fillcolor=plum1 ]
-    Белград [ fontsize=14 ]
-    Авала [shape=trapezium]
+    Белград [ shape=house, fontsize=14, margin=0.01 ]
+    Авала [ shape=trapezium, margin=0.01 ]
 
     "Стара Пазова" -- "Нова Пазова" -- Батайница -- Земун -- Белград
     Белград -- {Ресник Рушань Сланцы Сурчин}
