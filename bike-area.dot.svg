@@ -2022,13 +2022,13 @@
 <!-- Нови&#45;Сад -->
 <g id="node152" class="node">
 <title>Нови&#45;Сад</title>
-<polygon fill="#ffbbff" stroke="black" points="2107.88,-1372.16 2044.88,-1372.16 2044.88,-1353.16 2107.88,-1353.16 2107.88,-1372.16"/>
+<polygon fill="#cd96cd" stroke="black" points="2107.88,-1372.16 2044.88,-1372.16 2044.88,-1353.16 2107.88,-1353.16 2107.88,-1372.16"/>
 <text text-anchor="middle" x="2076.38" y="-1360.16" font-family="Droid Sans" font-size="10.00">Нови&#45;Сад</text>
 </g>
 <!-- Петроварадин -->
 <g id="node153" class="node">
 <title>Петроварадин</title>
-<polygon fill="#ffbbff" stroke="black" points="2159.38,-1248.8 2071.38,-1248.8 2071.38,-1229.8 2159.38,-1229.8 2159.38,-1248.8"/>
+<polygon fill="#cd96cd" stroke="black" points="2159.38,-1248.8 2071.38,-1248.8 2071.38,-1229.8 2159.38,-1229.8 2159.38,-1248.8"/>
 <text text-anchor="middle" x="2115.38" y="-1236.8" font-family="Droid Sans" font-size="10.00">Петроварадин</text>
 </g>
 <!-- Нови&#45;Сад&#45;&#45;Петроварадин -->
@@ -2039,7 +2039,7 @@
 <!-- Сремски Карловцы -->
 <g id="node154" class="node">
 <title>Сремски Карловцы</title>
-<polygon fill="#ffbbff" stroke="black" points="2170.38,-1155.3 2060.38,-1155.3 2060.38,-1136.3 2170.38,-1136.3 2170.38,-1155.3"/>
+<polygon fill="#cd96cd" stroke="black" points="2170.38,-1155.3 2060.38,-1155.3 2060.38,-1136.3 2170.38,-1136.3 2170.38,-1155.3"/>
 <text text-anchor="middle" x="2115.38" y="-1143.3" font-family="Droid Sans" font-size="10.00">Сремски Карловцы</text>
 </g>
 <!-- Петроварадин&#45;&#45;Сремски Карловцы -->
@@ -2050,7 +2050,7 @@
 <!-- Стражилово -->
 <g id="node155" class="node">
 <title>Стражилово</title>
-<polygon fill="#ffbbff" stroke="black" points="2223.88,-1065.57 2146.88,-1065.57 2146.88,-1046.57 2223.88,-1046.57 2223.88,-1065.57"/>
+<polygon fill="#cd96cd" stroke="black" points="2223.88,-1065.57 2146.88,-1065.57 2146.88,-1046.57 2223.88,-1046.57 2223.88,-1065.57"/>
 <text text-anchor="middle" x="2185.38" y="-1053.57" font-family="Droid Sans" font-size="10.00">Стражилово</text>
 </g>
 <!-- Сремски Карловцы&#45;&#45;Стражилово -->

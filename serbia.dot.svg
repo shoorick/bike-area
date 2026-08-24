@@ -822,13 +822,13 @@
 <!-- Нови&#45;Сад -->
 <g id="node60" class="node">
 <title>Нови&#45;Сад</title>
-<polygon fill="#ffbbff" stroke="black" points="148.46,-1072.72 85.46,-1072.72 85.46,-1053.72 148.46,-1053.72 148.46,-1072.72"/>
+<polygon fill="#cd96cd" stroke="black" points="148.46,-1072.72 85.46,-1072.72 85.46,-1053.72 148.46,-1053.72 148.46,-1072.72"/>
 <text text-anchor="middle" x="116.96" y="-1060.72" font-family="Noto Sans,sans" font-size="10.00">Нови&#45;Сад</text>
 </g>
 <!-- Петроварадин -->
 <g id="node61" class="node">
 <title>Петроварадин</title>
-<polygon fill="#ffbbff" stroke="black" points="198.96,-1006.72 110.96,-1006.72 110.96,-987.72 198.96,-987.72 198.96,-1006.72"/>
+<polygon fill="#cd96cd" stroke="black" points="198.96,-1006.72 110.96,-1006.72 110.96,-987.72 198.96,-987.72 198.96,-1006.72"/>
 <text text-anchor="middle" x="154.96" y="-994.72" font-family="Noto Sans,sans" font-size="10.00">Петроварадин</text>
 </g>
 <!-- Нови&#45;Сад&#45;&#45;Петроварадин -->
@@ -839,7 +839,7 @@
 <!-- Сремски Карловцы -->
 <g id="node62" class="node">
 <title>Сремски Карловцы</title>
-<polygon fill="#ffbbff" stroke="black" points="209.96,-950.72 99.96,-950.72 99.96,-931.72 209.96,-931.72 209.96,-950.72"/>
+<polygon fill="#cd96cd" stroke="black" points="209.96,-950.72 99.96,-950.72 99.96,-931.72 209.96,-931.72 209.96,-950.72"/>
 <text text-anchor="middle" x="154.96" y="-938.72" font-family="Noto Sans,sans" font-size="10.00">Сремски Карловцы</text>
 </g>
 <!-- Петроварадин&#45;&#45;Сремски Карловцы -->
@@ -850,7 +850,7 @@
 <!-- Стражилово -->
 <g id="node63" class="node">
 <title>Стражилово</title>
-<polygon fill="#ffbbff" stroke="black" points="177.46,-884.72 100.46,-884.72 100.46,-865.72 177.46,-865.72 177.46,-884.72"/>
+<polygon fill="#cd96cd" stroke="black" points="177.46,-884.72 100.46,-884.72 100.46,-865.72 177.46,-865.72 177.46,-884.72"/>
 <text text-anchor="middle" x="138.96" y="-872.72" font-family="Noto Sans,sans" font-size="10.00">Стражилово</text>
 </g>
 <!-- Сремски Карловцы&#45;&#45;Стражилово -->
